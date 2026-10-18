@@ -1,0 +1,113 @@
+
+INDUSTRIAL MACHINE MAINTENANCE KNOWLEDGE BASE
+
+1. PREDICTIVE MAINTENANCE
+
+Predictive maintenance uses sensor measurements, machine history,
+inspection records, and statistical or machine-learning models to
+identify possible maintenance needs before a failure occurs.
+
+A prediction is not proof that a failure will occur. Decisions should
+consider sensor reliability, operating conditions, maintenance history,
+and the consequences of a missed failure.
+
+2. AIR AND PROCESS TEMPERATURE
+
+Air temperature and process temperature describe different thermal
+conditions. Their relationship depends on machine design, operating
+state, sensor placement, and ambient conditions.
+
+Unexpected readings should be checked against the equipment manual,
+sensor calibration records, and recent operating history. A single
+temperature value should not be used as a universal safety limit.
+
+3. ROTATIONAL SPEED
+
+Rotational speed is commonly measured in revolutions per minute (rpm).
+An unexpected reduction, increase, or zero reading may reflect a
+stopped machine, a change in operating mode, a sensor issue, or a fault.
+
+Compare readings with the specified operating range for the particular
+machine and production task.
+
+4. TORQUE
+
+Torque describes rotational force and is often measured in newton-metres
+(Nm). Unusual torque may be associated with a changing load, friction,
+material differences, tool wear, or sensor problems.
+
+Use machine-specific limits and historical baselines. Do not treat a
+generic threshold as an approved shutdown limit.
+
+5. TOOL WEAR
+
+Tool wear represents accumulated use or a wear measurement, depending
+on the equipment and data source. Wear may affect quality, load, and
+maintenance requirements.
+
+Inspect the tool according to the manufacturer's schedule and validated
+maintenance procedures. Do not rely solely on an AI score to decide
+whether a tool must be replaced.
+
+6. DATA QUALITY
+
+Before trusting a prediction, check that:
+- sensor readings use the correct units;
+- measurements are recent and timestamped;
+- sensors are calibrated and functioning;
+- machine identifiers and product types are correct;
+- values are within the machine's documented operating range;
+- missing values and communication interruptions are identified;
+- model inputs resemble the data used for training.
+
+Unusual data may represent a real fault, a new operating condition, or
+a measurement problem. Investigate before drawing a conclusion.
+
+7. MACHINE FAILURE PREDICTION
+
+A machine-learning model estimates patterns associated with failure
+labels in its training data. Performance must be assessed on held-out
+data and, where possible, on later data and separate machines.
+
+Accuracy alone can be misleading when failures are rare. Review recall
+for failures, precision, the confusion matrix, balanced accuracy,
+precision-recall performance, and the costs of false alarms and missed
+failures.
+
+A model probability is not automatically a calibrated real-world
+failure probability. Calibration must be measured on representative
+data.
+
+8. ANOMALY DETECTION
+
+An anomaly detector flags observations that differ from patterns in its
+training data. An anomaly does not necessarily mean a machine is
+failing. A normal-looking observation does not guarantee safety.
+
+Investigate unusual readings using independent sensor checks, operating
+logs, inspection findings, and approved maintenance procedures.
+
+9. WHEN A PREDICTION MAY BE UNRELIABLE
+
+Treat a prediction cautiously when:
+- input readings are missing or implausible;
+- sensors may be faulty or miscalibrated;
+- the operating condition differs from the training data;
+- a novelty detector flags an unusual pattern;
+- model performance on the current machine is unknown;
+- the model or data pipeline has changed;
+- the consequences of a false negative are significant.
+
+An anomaly score is not the probability that the model is wrong.
+Evaluate prediction reliability using labeled outcomes, calibration,
+distribution-shift monitoring, and validation on new data.
+
+10. SAFETY AND ESCALATION
+
+This knowledge base is general guidance, not a machine-specific
+operating procedure. Follow the manufacturer's documentation, site
+safety rules, and authorized engineering instructions.
+
+Do not disable guards, bypass interlocks, or change safety controls
+based on a language-model recommendation. If a serious fault is
+suspected, follow the site's approved escalation and shutdown process.
